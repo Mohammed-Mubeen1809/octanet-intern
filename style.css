@@ -1,0 +1,109 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0;
+}
+
+header {
+        background-color: black; color: #fff; padding: 1px 0; text-align: center;
+    }
+
+    nav {
+        display: flex; justify-content: center;
+    }
+    nav a {
+        color: #fff; text-decoration: none; margin: 0 20px; font-size: 18px; transition: all 0.3s;
+    }
+    nav a:hover {
+        color:red;
+    }
+    .dropdown {
+        position: relative; display: inline-block;
+    }
+    .dropdown-content {
+        display: none; position: absolute; background-color: #333; min-width: 160px; z-index: 1;
+    }
+    .dropdown-content a {
+        color: #fff; padding: 2px 16px; text-decoration: none; display: grid; transition: all 0.3s;
+    }
+    .dropdown-content a:hover {
+        background-color:black;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    section {
+        padding: 9px 0; 
+        text-align: center;
+    }
+    section.home {
+         background-color: #f4f4f4;
+         text-align: left; 
+         padding: 0px 0px;
+        }
+    section.todolist {
+        background-color: #007bff; 
+        color: #fff;
+    }
+    section.contact {
+        background-color: #20e33d; color: #e60b0b;
+    }
+    .container {
+        max-width: 800px; margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 36px; margin-bottom: 20px;
+    }
+    p {
+        font-size: 18px; line-height: 1.6;
+    }
+
+    ul {
+        list-style: none; 
+        padding: 0;
+    }
+    li {
+        display: flex;
+         align-items: center; 
+         justify-content: space-between;
+        padding: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    li:last-child {
+        border-bottom: none;
+    }
+    input[type="text"], input[type="email"], textarea {padding: 8px; border: none; border-radius: 5px; margin-bottom: 10px; width: 100%; box-sizing: border-box;}
+
+    textarea {
+        height: 100px;
+    }
+
+    button {
+        padding: 8px 16px; 
+        border: none; border-radius: 5px;
+        background-color: #0056b3;
+        color: #fff; cursor: pointer;
+    }
+    button.post {
+        background-color: #427e34;
+         display: block; margin: 20px auto 0;
+        }
+
+    button:hover {
+        background-color: #007bff;
+    }
+
+    .task.completed {
+        text-decoration: line-through; color: rgba(255, 255, 255, 0.6);
+    }
+
+    footer {
+        background-color: black; color: #fff;
+         padding: 2px 0; 
+         text-align: center;
+          position: fixed; 
+          bottom: 0; left: 0; 
+          width: 100%;
+        }
+
+
+    @media only screen and (max-width: 768px) {h1 {font-size: 30px;} p {font-size: 16px;}}
+    @media only screen and (max-width: 576px) {h1 {font-size: 24px;} p {font-size: 14px;}}

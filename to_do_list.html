@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launching Page</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>DAY PLANNER</h1>
+    <nav>
+      <div class="dropdown">
+        <a href="#">MENU📜</a>
+        <div class="dropdown-content">
+          <a href="#home">Home</a>
+          <a href="#todolist">To-Do List</a>
+          <a href="#contact">Contact Details</a>
+          <a href="#signin">Sign In</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="home">
+    <div class="container">
+      <h1>Welcome to Day Planner.!</h1>
+      <p>We are glad to have you here. Explore our website to discover amazing features and services.</p>
+    </div>
+  </section>
+
+  <section id="todolist" class="todolist">
+    <div class="container">
+      <h1>To-Do List Section</h1>
+      <input type="text" id="taskInput" placeholder="Enter task...">
+      <button onclick="addTask()">Add Task</button>
+      <ul id="taskList"></ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h1>Contact Details Section</h1>
+      <form id="feedbackForm">
+        <input type="text" id="name" name="name" placeholder="Your Name (Optional)">
+        <input type="email" id="email" name="email" placeholder="Your Email">
+        <textarea id="description" name="description" placeholder="Description"></textarea>
+        <button type="submit" class="post">Post</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Launching Page. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function addTask() {
+      var t=document.createElement("li");
+      t.innerHTML='<span class="task">'+document.getElementById("taskInput").value+'</span>'+'<div class="actions">'+'<button onclick="completeTask(this)">Complete</button>'+'<button onclick="deleteTask(this)">Delete</button>'+'</div>';
+      document.getElementById("taskList").insertBefore(t,document.getElementById("taskList").firstChild);
+      document.getElementById("taskInput").value="";
+    }
+    function completeTask(t) {
+      var e=t.parentNode.parentNode;
+      var n=document.getElementById("taskList");
+      var o=document.querySelectorAll(".task.completed");
+      e.classList.contains("completed")?n.appendChild(e):n.insertBefore(e,n.children[o.length]);
+      var m=e.querySelector(".task");
+      m.classList.toggle("completed");
+    }
+    function deleteTask(t) {
+      var e=t.parentNode.parentNode;
+      e.style.opacity="0";
+      setTimeout(function(){e.remove()},300);
+    }
+  </script>
+
+</body>
+</html>
